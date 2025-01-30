@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de San Valentín</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff0f5;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        h1 {
+            color: #e60073;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .heart {
+            color: #e60073;
+            font-size: 1.5em;
+            animation: beat 1s infinite;
+            margin: 20px 0;
+        }
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e60073;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #cc005c;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .heart {
+                font-size: 1.2em;
+            }
+            .button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Música de Fondo Silenciada para Autoplay -->
+    <audio id="audio-fondo" autoplay loop muted>
+        <source src="audio/cancion-romantica.mp3" type="audio/mpeg">
+        Lamentablemente, tu navegador no puede reproducir la música. 
+        <a href="audio/cancion-romantica.mp3">Haz clic aquí para descargar la canción.</a>
+    </audio>
+
+    <div class="container">
+        <h1>Feliz Día de San Valentín 💖</h1>
+        <img src="imagenes/mi-foto.jpg" alt="Nuestra Foto">
+        <p>
+            Mi amor, cada día a tu lado es una bendición y hoy quiero recordarte lo mucho que significas para mí. 
+            Eres mi inspiración, mi alegría y mi todo. Gracias por llenar mi vida de amor y felicidad.
+        </p>
+        <p class="heart">❤️❤️❤️</p>
+        <button class="button" onclick="activarAudio()">Reproducir Música 🎵</button>
+    </div>
+
+    <script>
+        function activarAudio() {
+            var audio = document.getElementById('audio-fondo');
+            audio.muted = false;
+            audio.play();
+        }
+    </script>
+</body>
+</html>
