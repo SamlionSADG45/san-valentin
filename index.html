@@ -12,6 +12,7 @@
             padding: 20px;
             color: #333;
             margin: 0;
+            overflow-x: hidden; /* Evita desplazamiento horizontal por animaciones */
         }
         .container {
             background-color: #fff0f5;
@@ -87,13 +88,6 @@
             animation: floatBalloon 10s linear infinite;
         }
 
-        /* Colores Aleatorios para los Globos */
-        .balloon:nth-child(1) { background-color: #FF6B6B; }
-        .balloon:nth-child(2) { background-color: #FFD93D; }
-        .balloon:nth-child(3) { background-color: #6BCB77; }
-        .balloon:nth-child(4) { background-color: #4D96FF; }
-        .balloon:nth-child(5) { background-color: #845EC2; }
-
         /* Animación para Flotar los Globos */
         @keyframes floatBalloon {
             0% {
@@ -129,18 +123,6 @@
             opacity: 0.7;
             animation: fallConfetti 5s linear infinite;
         }
-
-        /* Colores Aleatorios para el Confeti */
-        .confetti:nth-child(1) { background-color: #FF6B6B; }
-        .confetti:nth-child(2) { background-color: #FFD93D; }
-        .confetti:nth-child(3) { background-color: #6BCB77; }
-        .confetti:nth-child(4) { background-color: #4D96FF; }
-        .confetti:nth-child(5) { background-color: #845EC2; }
-        .confetti:nth-child(6) { background-color: #FF9671; }
-        .confetti:nth-child(7) { background-color: #FFC75F; }
-        .confetti:nth-child(8) { background-color: #C75EF6; }
-        .confetti:nth-child(9) { background-color: #63D471; }
-        .confetti:nth-child(10) { background-color: #3B82F6; }
 
         /* Animación para Caer el Confeti */
         @keyframes fallConfetti {
@@ -194,39 +176,44 @@
 
     <div class="container">
         <h1>Feliz Día de San Valentín 💖</h1>
+        <!-- Botón de Reproducción de Música en la Parte Superior -->
+        <button class="button" onclick="activarAudio()">Reproducir Música 🎵</button>
         <img src="imagenes/mi-foto.jpg" alt="Nuestra Foto">
         <p>
             Mi amor, mi Emily hermosa,
 
 Hoy quiero escribirte algo que venga directo desde mi corazón, algo que exprese lo que siento por ti y lo afortunado que me siento de tenerte en mi vida.
+
             
 
-Desde aquel 27 de octubre, cuando nuestras almas se encontraron en este camino, mi vida ha cambiado de la manera más hermosa. Cada momento contigo ha sido una bendición, y cada sonrisa tuya es un rayo de luz que ilumina mis días. Nunca olvidaré aquel 8 de noviembre, cuando tus labios fueron los primeros en pronunciar esas palabras mágicas: "te amo". 
+Desde aquel 27 de octubre, cuando nuestras almas se encontraron en este camino, mi vida ha cambiado de la manera más hermosa. Cada momento contigo ha sido una bendición, y cada sonrisa tuya es un rayo de luz que ilumina mis días. 
             
-            Ese día supe que nuestro amor era algo único, algo destinado a crecer y florecer como la historia más hermosa jamás contada.
+            Nunca olvidaré aquel 8 de noviembre, cuando tus labios fueron los primeros en pronunciar esas palabras mágicas: "te amo". Ese día supe que nuestro amor era algo único, algo destinado a crecer y florecer como la historia más hermosa jamás contada.
 
-Me encanta cómo eres, la manera en que hablas con tanto cariño de Copo, ese pequeño ser que es tu mundo y a quien amas como un hijo. Amo verte emocionada cuando hablas de lo que te gusta, cuando tu mirada brilla al ver algo de Hello Kitty, o cuando algo verde capta tu atención. Amo cómo disfrutas de la música electrónica, cómo puedes perderte en el ritmo y simplemente ser tú misma. Amo que cada pulsera, collar, moño o vestido que usas sea un reflejo de tu esencia, de esa belleza única que tienes tanto por fuera como por dentro.
-
-Mi amor, sé que estás finalizando tu tercer semestre, justo en San Valentín, y quiero decirte lo orgulloso que estoy de ti. 
+Me encanta cómo eres, la manera en que hablas con tanto cariño de Copo, ese pequeño ser que es tu mundo y a quien amas como un hijo. 
             
-            Admiro tu esfuerzo, tu pasión por la obstetricia, tu dedicación para alcanzar tus sueños. Ver cómo trabajas por lo que amas me inspira cada día a ser mejor para ti, para nosotros.
+            
+            Amo verte emocionada cuando hablas de lo que te gusta, cuando tu mirada brilla al ver algo de Hello Kitty, o cuando algo verde capta tu atención. Amo cómo disfrutas de la música electrónica, cómo puedes perderte en el ritmo y simplemente ser tú misma. Amo que cada pulsera, collar, moño o vestido que usas sea un reflejo de tu esencia, de esa belleza única que tienes tanto por fuera como por dentro.
+
+Mi amor, sé que estás finalizando tu tercer semestre, justo en San Valentín, y quiero decirte lo orgulloso que estoy de ti. Admiro tu esfuerzo, tu pasión por la obstetricia, tu dedicación para alcanzar tus sueños. 
+            
+            
+            Ver cómo trabajas por lo que amas me inspira cada día a ser mejor para ti, para nosotros.
 
 Quiero que esta página web que estoy creando sea un pequeño reflejo del amor que siento por ti, un rincón donde siempre puedas recordar lo especial que eres para mí. Porque tú, Emily, eres mi regalo más grande, mi casualidad más bonita y mi destino favorito.
 
-Gracias por ser mi novia, por amarme, por enseñarme lo que significa compartir la vida con alguien tan maravilloso. 
+Gracias por ser mi novia, por amarme, por enseñarme lo que significa compartir la vida con alguien tan maravilloso. Prometo seguir amándote, apoyándote y construyendo juntos este hermoso camino que llamamos "nosotros".
             
-            Prometo seguir amándote, apoyándote y construyendo juntos este hermoso camino que llamamos "nosotros".
 
 Te amo con todo mi corazón.
+
             
 
 Con amor infinito,
-            
 Sam
             
         </p>
         <p class="heart">❤️❤️❤️</p>
-        <button class="button" onclick="activarAudio()">Reproducir Música 🎵</button>
     </div>
 
     <!-- Contenedores para Efectos -->
@@ -287,6 +274,13 @@ Sam
 
                 confettiContainer.appendChild(confetti);
             }
+        }
+
+        // Función para activar el audio (desmute)
+        function activarAudio() {
+            var audio = document.getElementById('audio-fondo');
+            audio.muted = false;
+            audio.play();
         }
 
         // Ejecutar las funciones al cargar la página
