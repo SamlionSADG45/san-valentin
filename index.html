@@ -20,6 +20,8 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             max-width: 800px;
             margin: 20px auto;
+            position: relative;
+            z-index: 5;
         }
         h1 {
             color: #e60073;
@@ -51,6 +53,8 @@
             border-radius: 25px;
             transition: background-color 0.3s;
             cursor: pointer;
+            border: none;
+            font-size: 1em;
         }
         .button:hover {
             background-color: #cc005c;
@@ -61,6 +65,95 @@
             border-radius: 10px;
             margin-top: 15px;
         }
+        /* Estilos para Globos */
+        .balloon-container {
+            position: fixed;
+            bottom: -100px; /* Comienza fuera de la pantalla */
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Permite hacer clic a través de los globos */
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -150px; /* Punto de inicio */
+            width: 50px;
+            height: 70px;
+            background-color: red;
+            border-radius: 50% 50% 50% 50%;
+            opacity: 0.8;
+            animation: floatBalloon 10s linear infinite;
+        }
+
+        /* Colores Aleatorios para los Globos */
+        .balloon:nth-child(1) { background-color: #FF6B6B; }
+        .balloon:nth-child(2) { background-color: #FFD93D; }
+        .balloon:nth-child(3) { background-color: #6BCB77; }
+        .balloon:nth-child(4) { background-color: #4D96FF; }
+        .balloon:nth-child(5) { background-color: #845EC2; }
+
+        /* Animación para Flotar los Globos */
+        @keyframes floatBalloon {
+            0% {
+                transform: translateX(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Estilos para Confeti */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 20;
+        }
+
+        .confetti {
+            position: absolute;
+            top: -10px; /* Punto de inicio */
+            width: 10px;
+            height: 10px;
+            background-color: #FFF;
+            opacity: 0.7;
+            animation: fallConfetti 5s linear infinite;
+        }
+
+        /* Colores Aleatorios para el Confeti */
+        .confetti:nth-child(1) { background-color: #FF6B6B; }
+        .confetti:nth-child(2) { background-color: #FFD93D; }
+        .confetti:nth-child(3) { background-color: #6BCB77; }
+        .confetti:nth-child(4) { background-color: #4D96FF; }
+        .confetti:nth-child(5) { background-color: #845EC2; }
+        .confetti:nth-child(6) { background-color: #FF9671; }
+        .confetti:nth-child(7) { background-color: #FFC75F; }
+        .confetti:nth-child(8) { background-color: #C75EF6; }
+        .confetti:nth-child(9) { background-color: #63D471; }
+        .confetti:nth-child(10) { background-color: #3B82F6; }
+
+        /* Animación para Caer el Confeti */
+        @keyframes fallConfetti {
+            0% {
+                transform: translateX(0) rotate(0deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateX(200px) translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 600px) {
             h1 {
@@ -75,6 +168,18 @@
             .button {
                 padding: 8px 16px;
                 font-size: 0.9em;
+            }
+
+            /* Tamaños de Globos Reducidos */
+            .balloon {
+                width: 30px;
+                height: 42px; /* Proporción 1:1.4 */
+            }
+
+            /* Tamaños de Confeti Reducidos */
+            .confetti {
+                width: 6px;
+                height: 6px;
             }
         }
     </style>
@@ -94,32 +199,101 @@
             Mi amor, mi Emily hermosa,
 
 Hoy quiero escribirte algo que venga directo desde mi corazón, algo que exprese lo que siento por ti y lo afortunado que me siento de tenerte en mi vida.
+            
 
-Desde aquel 27 de octubre, cuando nuestras almas se encontraron en este camino, mi vida ha cambiado de la manera más hermosa. Cada momento contigo ha sido una bendición, y cada sonrisa tuya es un rayo de luz que ilumina mis días. Nunca olvidaré aquel 8 de noviembre, cuando tus labios fueron los primeros en pronunciar esas palabras mágicas: "te amo". Ese día supe que nuestro amor era algo único, algo destinado a crecer y florecer como la historia más hermosa jamás contada.
+Desde aquel 27 de octubre, cuando nuestras almas se encontraron en este camino, mi vida ha cambiado de la manera más hermosa. Cada momento contigo ha sido una bendición, y cada sonrisa tuya es un rayo de luz que ilumina mis días. Nunca olvidaré aquel 8 de noviembre, cuando tus labios fueron los primeros en pronunciar esas palabras mágicas: "te amo". 
+            
+            Ese día supe que nuestro amor era algo único, algo destinado a crecer y florecer como la historia más hermosa jamás contada.
 
 Me encanta cómo eres, la manera en que hablas con tanto cariño de Copo, ese pequeño ser que es tu mundo y a quien amas como un hijo. Amo verte emocionada cuando hablas de lo que te gusta, cuando tu mirada brilla al ver algo de Hello Kitty, o cuando algo verde capta tu atención. Amo cómo disfrutas de la música electrónica, cómo puedes perderte en el ritmo y simplemente ser tú misma. Amo que cada pulsera, collar, moño o vestido que usas sea un reflejo de tu esencia, de esa belleza única que tienes tanto por fuera como por dentro.
 
-Mi amor, sé que estás finalizando tu tercer semestre, justo en San Valentín, y quiero decirte lo orgulloso que estoy de ti. Admiro tu esfuerzo, tu pasión por la obstetricia, tu dedicación para alcanzar tus sueños. Ver cómo trabajas por lo que amas me inspira cada día a ser mejor para ti, para nosotros.
+Mi amor, sé que estás finalizando tu tercer semestre, justo en San Valentín, y quiero decirte lo orgulloso que estoy de ti. 
+            
+            Admiro tu esfuerzo, tu pasión por la obstetricia, tu dedicación para alcanzar tus sueños. Ver cómo trabajas por lo que amas me inspira cada día a ser mejor para ti, para nosotros.
 
 Quiero que esta página web que estoy creando sea un pequeño reflejo del amor que siento por ti, un rincón donde siempre puedas recordar lo especial que eres para mí. Porque tú, Emily, eres mi regalo más grande, mi casualidad más bonita y mi destino favorito.
 
-Gracias por ser mi novia, por amarme, por enseñarme lo que significa compartir la vida con alguien tan maravilloso. Prometo seguir amándote, apoyándote y construyendo juntos este hermoso camino que llamamos "nosotros".
+Gracias por ser mi novia, por amarme, por enseñarme lo que significa compartir la vida con alguien tan maravilloso. 
+            
+            Prometo seguir amándote, apoyándote y construyendo juntos este hermoso camino que llamamos "nosotros".
 
 Te amo con todo mi corazón.
+            
 
 Con amor infinito,
+            
 Sam
+            
         </p>
         <p class="heart">❤️❤️❤️</p>
         <button class="button" onclick="activarAudio()">Reproducir Música 🎵</button>
     </div>
 
+    <!-- Contenedores para Efectos -->
+    <div class="balloon-container"></div>
+    <div class="confetti-container"></div>
+
+    <!-- Scripts para Animaciones -->
     <script>
-        function activarAudio() {
-            var audio = document.getElementById('audio-fondo');
-            audio.muted = false;
-            audio.play();
+        // Función para generar Globos
+        function createBalloons() {
+            const balloonContainer = document.querySelector('.balloon-container');
+            const balloonColors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#845EC2'];
+            const numberOfBalloons = 20; // Número de globos a generar
+
+            for (let i = 0; i < numberOfBalloons; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                // Asignar color aleatorio
+                balloon.style.backgroundColor = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+                // Posición horizontal aleatoria
+                balloon.style.left = Math.random() * 100 + '%';
+                // Tamaño aleatorio
+                const size = Math.random() * 30 + 20; // Tamaño entre 20px y 50px
+                balloon.style.width = size + 'px';
+                balloon.style.height = size * 1.4 + 'px'; // Mantener proporción
+                // Animación aleatoria
+                const delay = Math.random() * 5;
+                balloon.style.animationDelay = delay + 's';
+                const duration = Math.random() * 5 + 5; // Duración entre 5s y 10s
+                balloon.style.animationDuration = duration + 's';
+
+                balloonContainer.appendChild(balloon);
+            }
         }
+
+        // Función para generar Confeti
+        function createConfetti() {
+            const confettiContainer = document.querySelector('.confetti-container');
+            const confettiColors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#845EC2', '#FF9671', '#FFC75F', '#C75EF6', '#63D471', '#3B82F6'];
+            const numberOfConfetti = 100; // Número de confeti a generar
+
+            for (let i = 0; i < numberOfConfetti; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                // Asignar color aleatorio
+                confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                // Posición horizontal aleatoria
+                confetti.style.left = Math.random() * 100 + '%';
+                // Tamaño aleatorio
+                const size = Math.random() * 8 + 4; // Tamaño entre 4px y 12px
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                // Animación aleatoria
+                const delay = Math.random() * 5;
+                confetti.style.animationDelay = delay + 's';
+                const duration = Math.random() * 5 + 5; // Duración entre 5s y 10s
+                confetti.style.animationDuration = duration + 's';
+
+                confettiContainer.appendChild(confetti);
+            }
+        }
+
+        // Ejecutar las funciones al cargar la página
+        window.onload = function() {
+            createBalloons();
+            createConfetti();
+        };
     </script>
 </body>
 </html>
